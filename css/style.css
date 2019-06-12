@@ -1,0 +1,51 @@
+.brown{
+    height : 90px;
+    width : 90px;
+    background-color: saddlebrown;
+}
+.black{
+    height : 90px;
+    width : 90px;
+    background-color: black;
+}
+
+#hero {
+    position:absolute;
+    top:18px;
+    left:20px;
+}
+
+#gob{
+
+}
+
+#up{
+    position : absolute;
+    top:200px;
+    right: 150px;
+    transform: rotate(-90deg);
+}
+#right{
+    position : absolute;
+    top:300px;
+    right: 50px;
+}
+#down{
+    position : absolute;
+    top:400px;
+    right: 150px;
+    transform: rotate(90deg);
+}
+#left{
+    position : absolute;
+    top:300px;
+    right: 250px;
+    transform: rotate(180deg);
+}
+
+#attack{
+    position:absolute;
+    top:30px;
+    right:280px;
+    border: red solid 1px;
+}
