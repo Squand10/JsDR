@@ -24,8 +24,11 @@ move(x,y){
         document.getElementById('hero').style.transform = "translate("+this.x+"px,"+this.y+"px)";
 }
 attack(cible){
-
-        console.log(`${this.nom} attaque ${cible.nom}`);
+    if (cible.nom === null) {
+        console.log(`Vous frappez dans le vide`);
+        return;
+    }
+    console.log(`${this.nom} attaque ${cible.nom}`);
         cible.vie -= this.force;
     if (cible.vie <= 0){
             this.gold += cible.gold;

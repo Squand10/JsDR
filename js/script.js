@@ -23,7 +23,7 @@ document.getElementById('left').addEventListener("click", function(){
 });
 
 document.getElementById('attack').addEventListener("click", function(){
-    let target = prompt();
+    let target = prompt("Indiquez la cible");
     squand.attack(eval(target));
 });
 
