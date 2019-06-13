@@ -1,3 +1,5 @@
+import {feed} from "./random.js";
+
 export default class Perso {
     constructor(lvl, nom, vie, armor, force, agi, inte){
         this.lvl = lvl;
@@ -24,23 +26,21 @@ move(x,y){
         document.getElementById('hero').style.transform = "translate("+this.x+"px,"+this.y+"px)";
 }
 attack(cible){
-    if (cible.nom === null) {
-        console.log(`Vous frappez dans le vide`);
+    if (cible.xp === null) {
+        feed(`${cible.nom} est déjà mort, gros bourrin`);
         return;
     }
-    console.log(`${this.nom} attaque ${cible.nom}`);
-        cible.vie -= this.force;
+    feed(`${this.nom} attaque ${cible.nom}`);
+    cible.vie -= this.force;
     if (cible.vie <= 0){
             this.gold += cible.gold;
             this.xp += cible.xp;
-            console.log(`${cible.nom} a été vaincu. Vous Gagnez ${cible.gold} pièces d'or et ${cible.xp} points d'experience.`);
+        feed(`${cible.nom} a été vaincu. Vous Gagnez ${cible.gold} pièces d'or et ${cible.xp} points d'experience.`);
             cible.xp = null;
             cible.gold = null;
-            cible.nom = null;
         } else {
-        console.log(`${cible.nom} a subit ${this.force} points de dégats`);
+        feed(`${cible.nom} a subit ${this.force} points de dégats`);
     }
-
 }
 
 equip(item){
@@ -50,5 +50,4 @@ equip(item){
         this.agi += item.agi;
         this.inte += item.inte;
 }
-
 }

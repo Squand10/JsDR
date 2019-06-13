@@ -8,6 +8,16 @@ function dice(x) {
 //pour un dé 20, lancer dice(20)
 //etc...
 
-export {cheatedDice, dice};
+
+function feed(x){
+
+    document.getElementById('feed').insertAdjacentHTML("beforeend", '<p>'+x+'</p>');
+    return document.getElementById('feed').scrollTop = 999999;
+}
+//Ajoute du texte au journal de combat
+
+
+
+export {cheatedDice, dice, feed};
 
 
