@@ -3,10 +3,13 @@ import Mob from './mob.js';
 import Item from './item.js';
 import World from './world.js';
 
+
 const squand = new Perso(1, 'Squand', 150, 0, 50, 45, 45);
 const csq = new Item('Casque', 14, 10 ,10 ,10);
-let gob = new Mob ("Gobelin", 110, 10 , 30 , 5);
+let gobelin = new Mob ("Gobelin", 110, 10 , 30 , 5);
 
+let level1=new World();
+level1.buildLevel();
 
 
 document.getElementById('up').addEventListener("click", function(){
@@ -23,7 +26,7 @@ document.getElementById('left').addEventListener("click", function(){
 });
 
 document.getElementById('attack').addEventListener("click", function(){
-    let target = prompt("Indiquez la cible");
+    let target = prompt("Indiquez la cible(ex: gobelin)");
     squand.attack(eval(target));
 });
 
@@ -32,7 +35,6 @@ document.getElementById('attack').addEventListener("click", function(){
 
 console.log(csq.decrire());
 console.log(squand.decrire());
-console.log(gob.decrire());
+console.log(gobelin.decrire());
 
-let level1=new World();
-level1.buildLevel();
+

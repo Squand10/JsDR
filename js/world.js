@@ -1,8 +1,6 @@
-import dice from './random.js';
-import cheatedDice from "./random.js";
+import {cheatedDice} from "./random.js";
 
 export default class World {
-
     constructor() {
         this.height = cheatedDice(8);
         this.width = cheatedDice(8);

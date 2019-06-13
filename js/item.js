@@ -1,6 +1,6 @@
-import dice from './random.js';
-const generator1 = ['en bois flotté', 'en collier de nouilles', 'arracheur de dents', 'en plastique sale','mangeur de morts', 'baiseur de maman', 'en vieille glaise', 'en jambon braisé' ,'en meringue rose', 'en mousse', 'eclateur de boutons'];
-const generator2 = ['de la marmelade', 'de la catapulte', 'de la grand-mère', 'de la grande muraille', 'du tout puissant Mortisse', 'des anciens', 'de la gratitude éternelle', 'de la sandale maudite', 'du courroux vengeur', 'd\'Hitler', 'de Mussolini' ];
+import {dice} from './random.js';
+const generator1 = ['en bois flotté', 'en collier de nouilles', 'arracheur de dents', 'en plastique sale','vert fluo', 'communiste', 'en vieille glaise', 'en jambon braisé' ,'en meringue rose', 'en mousse', 'moisi'];
+const generator2 = ['de la marmelade', 'de la catapulte', 'de la grand-mère', 'de la grande muraille', 'du tout puissant Mortisse', 'des anciens', 'de la gratitude éternelle', 'de la sandale maudite', 'du courroux vengeur', 'd\'Hitler', 'de Mussolini'];
 
 export default class Item{
 
@@ -12,8 +12,7 @@ export default class Item{
         this.force = force*dice(4);
         this.agi = agi*dice(4);
         this.inte = inte*dice(4);
-        this.nom = this.type + ' ' + generator1[dice(generator1.length-1)] + ' ' + generator2[dice(generator2.length-1)];
-        this.lvl = 0;
+        this.nom = this.type + ' ' + generator1[dice((generator1.length)-1)] + ' ' + generator2[dice((generator2.length)-1)];
 }
 
 decrire(){
