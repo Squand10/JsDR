@@ -16,8 +16,14 @@ function feed(x){
 }
 //Ajoute du texte au journal de combat
 
+function setAttributes(el, attrs) {
+    for(var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+    }
+}
 
 
-export {cheatedDice, dice, feed};
+
+export {cheatedDice, dice, feed, setAttributes};
 
 

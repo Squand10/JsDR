@@ -2,7 +2,8 @@ import Perso from './perso.js';
 import Mob from './mob.js';
 import Item from './item.js';
 import World from './world.js';
-
+import {setAttributes} from "./random.js";
+import {dice} from "./random.js";
 
 
 const squand = new Perso(1, 'Squand', 150, 0, 50, 45, 45);
@@ -51,8 +52,6 @@ document.addEventListener("keydown", (e)=>{
 
 
 
-
-
 document.getElementById('attack').addEventListener("click", function(){
     let target = prompt("Indiquez la cible(ex: gobelin)");
     squand.attack(eval(target));
@@ -63,3 +62,13 @@ document.addEventListener("keydown", (e)=> {
         squand.attack(eval(target));
     }
 });
+
+
+
+//Fait spawn les gobelins aléatoirement sur le damier
+for (let i=0; i<4; i++){
+    let spawn = document.getElementById(""+dice(level1.width-1)+""+dice(level1.height-1)+"");
+    let createGob = document.createElement("img");
+    setAttributes(createGob,{"src":"images/gob.png","id":"gob"+i+""});
+    spawn.appendChild(createGob);
+}
