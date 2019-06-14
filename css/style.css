@@ -56,3 +56,9 @@ div{
     border: black solid 1px;
     overflow-y:auto;
 }
+
+
+td{
+    horiz-align: center;
+    vertical-align: center;
+}

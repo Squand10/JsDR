@@ -14,6 +14,8 @@ let level1=new World();
 level1.buildLevel();
 
 
+
+//Déplacements
 document.getElementById('up').addEventListener("click", function(){
     squand.move(0,-94);
 });
@@ -52,6 +54,7 @@ document.addEventListener("keydown", (e)=>{
 
 
 
+//Touche Attaque
 document.getElementById('attack').addEventListener("click", function(){
     let target = prompt("Indiquez la cible(ex: gobelin)");
     squand.attack(eval(target));
@@ -65,10 +68,23 @@ document.addEventListener("keydown", (e)=> {
 
 
 
-//Fait spawn les gobelins aléatoirement sur le damier
+//Fait spawn les gobelins aléatoirement sur le damier (empêche deux gobelins sur la même case)
+
 for (let i=0; i<4; i++){
     let spawn = document.getElementById(""+dice(level1.width-1)+""+dice(level1.height-1)+"");
     let createGob = document.createElement("img");
-    setAttributes(createGob,{"src":"images/gob.png","id":"gob"+i+""});
+    setAttributes(createGob,{"src":"images/gob.png","id":"gob"+i+"","class":"gobelins"});
+
+    let nodeGob = document.querySelectorAll(".gobelins");
+    for (let j=0; j<4; j++) {
+        if(spawn.contains(nodeGob[j])){
+            console.log('spawn bloqué');
+            spawn = document.getElementById(""+dice(level1.width-1)+""+dice(level1.height-1)+"");
+            j=-1;
+        }
+    }
     spawn.appendChild(createGob);
 }
+
+
+
