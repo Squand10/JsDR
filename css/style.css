@@ -9,12 +9,6 @@
     background-color: black;
 }
 
-#hero {
-    position:absolute;
-    top:18px;
-    left:20px;
-}
-
 #up{
     position : absolute;
     top:200px;

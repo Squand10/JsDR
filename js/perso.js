@@ -1,5 +1,6 @@
 import {feed} from "./random.js";
 
+
 export default class Perso {
     constructor(lvl, nom, vie, armor, force, agi, inte){
         this.lvl = lvl;
@@ -13,11 +14,13 @@ export default class Perso {
         this.gold = 0;
         this.x = 0;
         this.y = 0;
+
 }
 
 decrire(){
         return `${this.nom} est de niveau ${this.lvl} a ${this.vie} vie, ${this.armor} d'armure, ${this.force} force, ${this.agi} agilité, ${this.inte} intelligence, ${this.xp} points d'expérience et ${this.gold} pièces d'or`;
 }
+
 
 
 move(x,y){
